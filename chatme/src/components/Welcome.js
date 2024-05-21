@@ -4,7 +4,7 @@ import Robot from "../assets/robot.gif";
 const Welcome = () => {
   const [userName, setUserName] = useState("");
 
-  useEffect(async () => {
+  useEffect( () => {
     const fetch = async () => {
       try {
         setUserName(
