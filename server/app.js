@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 const cors = require("cors");
+
 const mongoose = require('mongoose');
 const authRoutes = require("./routes/auth");
 const messageRoutes = require("./routes/messages");
+const socket = require("socket.io");
 require("dotenv").config();
 
 app.use(cors());
@@ -23,11 +25,34 @@ mongoose
 
 
 app.use("/api/auth", authRoutes);
-// app.use("/api/messages", messageRoutes);
+ app.use("/api/messages", messageRoutes);
 
 
 const PORT = 4000;
 
-app.listen(PORT,function(){
+const server = app.listen(PORT,function(){
     console.log(`listen at ${PORT}`);
 })
+
+
+const io = socket(server, {
+  cors: {
+    origin: "http://localhost:3000",
+    credentials: true,
+  },
+});
+
+global.onlineUsers = new Map();
+io.on("connection", (socket) => {
+  global.chatSocket = socket;
+  socket.on("add-user", (userId) => {
+    onlineUsers.set(userId, socket.id);
+  });
+
+  socket.on("send-msg", (data) => {
+    const sendUserSocket = onlineUsers.get(data.to);
+    if (sendUserSocket) {
+      socket.to(sendUserSocket).emit("msg-recieve", data.msg);
+    }
+  });
+});
