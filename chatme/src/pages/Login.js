@@ -77,7 +77,7 @@ export default function Login(){
            <label class="block" >username</label>
            <input text = "text" class="w-full p-2 rounded-md mt-1 block " name="username" placeholder='username' value={values.username} onChange={(e)=>{handleChange(e)}}/>
             <label class="block">password</label>
-           <input text = "text"  class="w-full p-2 rounded-md mt-1 block" name="password" placeholder='password'value={values.password} onChange={(e)=>{handleChange(e)}}/>
+           <input type="password"  class="w-full p-2 rounded-md mt-1 block" name="password" placeholder='password'value={values.password} onChange={(e)=>{handleChange(e)}}/>
            <div class="flex justify-center">
            <button type='submit' class="block text-white bg-gray-500 m-2 p-2 rounded-md w-48 ">LOGIN</button>
             </div>
