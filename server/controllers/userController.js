@@ -51,12 +51,10 @@ const login = async (req, res, next) => {
        })
    
       const isPasswordValid = await bcrypt.compare(password, newUser.password);
-      if (!isPasswordValid){
-            return  res.json({status:true,newUser})
-      }
-      // const token = generateToken(user.id);
-      // console.log(token);
-      // res.json({ token });
+     if (!isPasswordValid)
+        return res.json({ msg: "Incorrect Username or Password", status: false });
+      delete newUser.password;
+      return res.json({ status: true, newUser });
         
     
     
