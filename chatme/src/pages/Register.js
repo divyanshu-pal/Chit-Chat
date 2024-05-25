@@ -99,9 +99,9 @@ export default function Register(){
              <label for="email" class="block text-base mb-2">email</label>
             <input type="text" class="rounded-md w-full p-3" placeholder='email' name='email' value={values.email} onChange={(e)=>handleChange(e)}/>
             <label class="block">password</label>
-            <input type="text" class="rounded-md w-full p-3" placeholder='password' name='password' value={values.password}onChange={(e)=>handleChange(e)}/>
+            <input type="password" class="rounded-md w-full p-3" placeholder='password' name='password' value={values.password}onChange={(e)=>handleChange(e)}/>
             <label class="block">confirmpassword</label>
-            <input type="text" class="rounded-md w-full p-3" placeholder='conformpassword' name='cnfpassword' value={values.cnfpassword} onChange={(e)=>handleChange(e)}/>
+            <input type="password" class="rounded-md w-full p-3" placeholder='conformpassword' name='cnfpassword' value={values.cnfpassword} onChange={(e)=>handleChange(e)}/>
           
             <div class="flex justify-center p-2 m-2 ">
             <button type='submit'  class=" block bg-yellow-600 text-white rounded-md p-2 w-48">Create User</button>
