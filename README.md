@@ -1,16 +1,16 @@
 ## Chit Chat App ##
 ***A messaging app build with socket.io for realtime chat***
 
-**Register Page**
+## Register Page ##
 ![Screenshot (306)](https://github.com/divyanshu-pal/Chit-Chat/assets/86774540/ce60ba51-7203-4a84-8d97-f9cdc71a338b)
 
-**Login Page**
+## Login Page ##
 ![Screenshot (305)](https://github.com/divyanshu-pal/Chit-Chat/assets/86774540/d423d331-11a0-4aec-b584-26898cca7949)
 
-***Loader***
+## Loader ##
 ![Screenshot (298)](https://github.com/divyanshu-pal/Chit-Chat/assets/86774540/138ee6fc-9b63-4f81-95c8-372c600d021c)
 
-**select profile pic**
+## select profile pic ##
 ![Screenshot (299)](https://github.com/divyanshu-pal/Chit-Chat/assets/86774540/53f00f3c-c802-4e5c-a981-7b9abeb4431a)
 
 ***chat***
