@@ -8,7 +8,10 @@ const messageRoutes = require("./routes/messages");
 const socket = require("socket.io");
 require("dotenv").config();
 
-app.use(cors());
+app.use(cors({
+   methods:["POST","GET"],
+  credentials:true
+}));
 app.use(express.json());
 
 mongoose
